@@ -35,12 +35,14 @@ html_template = """
     margin-bottom: 20px;
   }
   .image_container {
+    position: relative;
     border-radius: 25px;
     width: 100%;
     height: 100%;
     position: relative; 
   }
   .car-image {
+    position: relative;
     background-image: url('car_inside.jpg'); /* Placeholder for car image */
     background-size: cover;
     height: 100%;
