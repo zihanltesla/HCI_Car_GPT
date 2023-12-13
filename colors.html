@@ -1,5 +1,4 @@
-def create_html_with_colors(colors):
-    html_content = """
+
     <html>
     <head>
         <style>
@@ -48,22 +47,9 @@ def create_html_with_colors(colors):
         </div>
         <div class="car-interior">
             <div class="color-container">
-    """
-
-    for color in colors:
-        if color != "No color detected":
-            html_content += f"<div class='color-box' style='background-color:{color};'></div>"
-
-    html_content += """
+    <div class='color-box' style='background-color:yellow;'></div><div class='color-box' style='background-color:orange;'></div>
             </div>
         </div>
     </body>
     </html>
-    """
-    return html_content
-
-def save_html_file(content, filename='colors.html'):
-    with open(filename, 'w') as file:
-        file.write(content)
-    print(f"HTML file saved as {filename}")
-
+    
