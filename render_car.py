@@ -57,6 +57,30 @@ html_template = """
       width: 21%; /* Example width */
       height: 10px; /* Example height */
     }
+    
+  .light-strip-45 {
+  position: absolute;
+  background-color: red; /* Initial color similar to the strip */
+  transition: background-color 0.5s ease; /* Smooth transition for hover effect */
+  /* Position and size of the strip to match the image */
+  top: 57%; /* Example position */
+  left: 80%; /* Example position */
+  width: 21%; /* Example width */
+  height: 10px; /* Example height */
+  transform: rotate(25deg); /* Rotate 45 degrees from horizontal */
+}
+
+.light-strip-135 {
+  position: absolute;
+  background-color: red; /* Initial color similar to the strip */
+  transition: background-color 0.5s ease; /* Smooth transition for hover effect */
+  /* Position and size of the strip to match the image */
+  top: 57%; /* Example position */
+  left: 5%; /* Example position */
+  width: 15%; /* Example width */
+  height: 10px; /* Example height */
+  transform: rotate(160deg); /* Rotate 135 degrees from horizontal */
+}
 
 </style>
 </head>
@@ -70,6 +94,8 @@ html_template = """
     <div class="image_container">
       <div class="car-image">
         <div class="light-strip"></div>
+        <div class="light-strip-45"></div>
+        <div class="light-strip-135"></div>
       </div>
     </div>
   
