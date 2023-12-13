@@ -31,6 +31,7 @@ def create_html_with_colors(colors,contents):
         box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     }
     .container {
+        margin-left: 20px;
         background: #e0e5ec;
         border-radius: 25px;
         box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
