@@ -193,6 +193,19 @@ def create_html_with_colors(colors,contents,music,emotion):
         position: absolute; /* This positions the image absolutely within the music-monitor div */
     }
 
+    .logo-image {
+        background-image: url('images/car_logo.jpg');
+        background-size: contain; /* This will ensure the entire image fits within the area */
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 8%;
+        height: 8%;
+        top: 52%;
+        left: 25%;
+        position: absolute;
+        border-radius: 5px;
+    }
+
     .music-monitor-iframe {
         position: absolute; /* Position the iframe absolutely within the music-monitor-image */
         top: 66%;  /* Center vertically */
