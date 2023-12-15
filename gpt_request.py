@@ -3,8 +3,8 @@ import json
 from color import create_html_with_colors, save_html_file
 import re
 
-def get_light_color(emotion):
-    api_key = 'sk-U8rQg1LkmQXjMwAH0351D50eFd134e1e96B64aC7059d9d60'  # 使用你的 API 密钥
+def get_light_color_and_music(emotion):
+    api_key = 'sk-U8rQg1LkmQXjMwAH0351D50eFd134e1e96B64aC7059d9d60'  # key of api
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json'
@@ -15,6 +15,7 @@ def get_light_color(emotion):
         "messages": [
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": f"I am currently feeling {emotion}. Can you suggest a light color or color combination that would either complement or help to soothe this emotion?"},
+            {"role": "user", "content": "Also, could you recommend some music for this emotion from youtube ? Please provide a music link if possible."}
         ]
     }
 
@@ -42,14 +43,14 @@ def extract_colors(text):
         "ivory", "salmon", "plum"
     ]
 
-    # Create a regular expression pattern to match any of the color words
-    pattern = r'\b(' + '|'.join(colors) + r')\b'
+    # Create a regular expression pattern to match any of the color words, allowing an optional 's' at the end
+    pattern = r'\b(' + '|'.join(colors) + r')s?\b'
 
     # Find all unique color occurrences in the text using the pattern
     found_colors = re.findall(pattern, text, re.IGNORECASE)
 
-    # Convert all found colors to lowercase to maintain uniformity and avoid duplicates like "Blue" and "blue"
-    found_colors = set([color.lower() for color in found_colors])
+    # Convert all found colors to lowercase and remove trailing 's' if present
+    found_colors = set([color.lower().rstrip('s') for color in found_colors])
 
     # Return the list of found colors or ["No color detected"] if none are found
     return found_colors if found_colors else ["No color detected"]
@@ -99,22 +100,33 @@ color_name_to_hex = {
 }
 # 示例：发送一个请求
 emotion = input("Enter your emotion: ")
-response = get_light_color(emotion)
+response = get_light_color_and_music(emotion)
 
-# 提取并打印氛围灯颜色
+# 提取并打印氛围灯颜色and music
 
 if response.get('choices') and len(response['choices']) > 0:
-    color_response = response['choices'][0]['message']['content']
-    print("GPTresponse:",color_response)
-    colors = extract_colors(color_response)
+
+    response = response['choices'][0]['message']['content']
+    url_pattern = r'https?://www\.youtube\.com/watch\?v=[\w-]+'
+    # youtube_links = re.findall(url_pattern, response)[0]
+    youtube_links_dict = {
+        "happy": "https://www.youtube.com/embed/BP5Jm5HAbiQ",
+        "sad": "https://www.youtube.com/embed/UfcAVejslrU",  # Replace with the actual video ID for 'sad'
+        "excited": "https://www.youtube.com/embed/UfcAVejslrU"  # Assuming this is the link for 'excited'
+    }
+
+    print("GPT Color Response:", response)
+    colors = extract_colors(response)
     if colors == ["No color detected"]:
         print(f"No specific color detected for the emotion '{emotion}'.")
     else:
         colors_str = ", ".join(colors)
         print(f"The appropriate ambient light colors for '{emotion}' are: {colors_str}")
         colors_hex = map_colors_to_hex(colors, color_name_to_hex)
-        html_content = create_html_with_colors(colors_hex, color_response)
+        html_content = create_html_with_colors(colors_hex, response,youtube_links_dict[emotion])
         save_html_file(html_content)
+
+    print("GPT Music Response:", youtube_links_dict[emotion])
 else:
     print("No response or invalid response received.")
 

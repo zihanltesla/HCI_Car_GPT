@@ -41,7 +41,7 @@
     }
 
     .logo {
-        background-image: url('open_ai.jpg');
+        background-image: url('images/open_ai.jpg');
         width: 400px;
         height: 120px;
         border-radius: 15px;
@@ -65,11 +65,19 @@
         position: relative; 
     }
     .car-image {
-        background-image: url('car_inside.jpg'); /* Placeholder for car image */
+        background-image: url('images/car_inside.jpg'); /* Placeholder for car image */
         background-size: cover;
         height: 100%;
         border-radius: 15px;
     }
+
+    .music-image {
+        
+        background-size: cover;
+        height: 100%;
+        border-radius: 15px;
+    }
+
     .light-strip_side {
         position: absolute;
         top: 57%;
@@ -115,10 +123,26 @@
         animation: flowColors 3s infinite linear;
         transform: rotate(171deg); /* Rotate 135 degrees from horizontal */
         }
+
+    .music-monitor {
+        background-image: url('images/monitor_sad.jpg');
+        position: absolute;
+        top: 54.5%;
+        left: 50.3%;
+        transform: translate(-50%, -50%);
+        width: 145px;
+        height: 90px;
+        box-shadow: 0px 0px 10px #888888;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333333;
+        font-size: 20px;
+    }
     
 
     
-    @keyframes flowColors {0.0% { background-color: #FFFF00; }20.0% { background-color: #FFC0CB; }40.0% { background-color: #008000; }60.0% { background-color: #0000FF; }80.0% { background-color: #F5FFFA; }100% { background-color: #FFFF00; }}
+    @keyframes flowColors {0.0% { background-color: #FF0000; }100% { background-color: #FF0000; }}
     </style>
     </head>
     <body>
@@ -126,17 +150,7 @@
     <div class="side-container">
         <div class="logo"></div>
         <div class="contents">
-            <h1>If you're feeling happy and would like to enhance that emotion, I would suggest considering light and cheerful colors that can complement your mood. Some options include:
-
-1. Soft Yellow: A gentle and warm shade of yellow can further amplify your happiness, creating a sunny and uplifting ambiance.
-
-2. Sky Blue: This light and calming shade of blue can help soothe any restlessness or overwhelming happiness, promoting a sense of tranquility.
-
-3. Mint Green: With its refreshing and cool undertones, mint green can create a balance between happiness and relaxation, bringing a sense of calm and joy to your space.
-
-4. Pastel Pink: This soft and delicate hue can add a touch of playfulness to your surroundings, enhancing your feelings of happiness and contentment.
-
-If you prefer a color combination, you might consider combining soft yellow and sky blue for a harmonious and light-hearted color scheme. Experimenting with these colors can help create an environment that complements or enhances your current positive mood.</h1>
+            <h1>aaaaa</h1>
         </div>
     </div>
 
@@ -151,9 +165,14 @@ If you prefer a color combination, you might consider combining soft yellow and 
                     <div class="light-strip_driver"></div>
                     <div class="light-strip-45"></div>
                     <div class="light-strip-135"></div>
+                    <div class="music-monitor">
+                        <div class="music-image"></div> 
+                        <iframe width="45" height="10" src="https://www.youtube.com/embed/BP5Jm5HAbiQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
             </div>
         </div>
     </div>
+    
     </body>
     </html>
     

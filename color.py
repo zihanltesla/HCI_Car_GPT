@@ -1,4 +1,4 @@
-def create_html_with_colors(colors,contents):
+def create_html_with_colors(colors,contents,emotion):
     # Start building the HTML content with the head, including styles and keyframes for animations
     html_content = """
     <!DOCTYPE html>
@@ -43,7 +43,7 @@ def create_html_with_colors(colors,contents):
     }
 
     .logo {
-        background-image: url('open_ai.jpg');
+        background-image: url('images/open_ai.jpg');
         width: 400px;
         height: 120px;
         border-radius: 15px;
@@ -67,11 +67,19 @@ def create_html_with_colors(colors,contents):
         position: relative; 
     }
     .car-image {
-        background-image: url('car_inside.jpg'); /* Placeholder for car image */
+        background-image: url('images/car_inside.jpg'); /* Placeholder for car image */
         background-size: cover;
         height: 100%;
         border-radius: 15px;
     }
+
+    .music-image {
+        
+        background-size: cover;
+        height: 100%;
+        border-radius: 15px;
+    }
+
     .light-strip_side {
         position: absolute;
         top: 57%;
@@ -117,6 +125,22 @@ def create_html_with_colors(colors,contents):
         animation: flowColors 3s infinite linear;
         transform: rotate(171deg); /* Rotate 135 degrees from horizontal */
         }
+
+    .music-monitor {
+        background-image: url('images/monitor_sad.jpg');
+        position: absolute;
+        top: 54.5%;
+        left: 50.3%;
+        transform: translate(-50%, -50%);
+        width: 145px;
+        height: 90px;
+        box-shadow: 0px 0px 10px #888888;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333333;
+        font-size: 20px;
+    }
     
 
     
@@ -157,9 +181,14 @@ def create_html_with_colors(colors,contents):
                     <div class="light-strip_driver"></div>
                     <div class="light-strip-45"></div>
                     <div class="light-strip-135"></div>
+                    <div class="music-monitor">
+                        <div class="music-image"></div> 
+                        <iframe width="45" height="10" src="{emotion}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
             </div>
         </div>
     </div>
+    
     </body>
     </html>
     """
