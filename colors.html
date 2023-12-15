@@ -169,38 +169,40 @@
         left: 50.3%;
         background-color: #ffffff;
         transform: translate(-50%, -50%);
-        width: 145px;
-        height: 90px;
+        width: 145px;  /* Or the width of the screen in the car image */
+        height: 90px;  /* Or the height of the screen in the car image */
         box-shadow: 0px 0px 10px #888888;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #333333;
         font-size: 20px;
-        overflow: hidden; /* Hide anything that goes beyond the bounds of the container */
+        overflow: hidden; /* This will hide the overflow from the iframe */
     }
 
     .music-monitor-image {
         background-image: url('images/monitor_sad.jpg');
-        background-size: contain; /* Adjust as needed to 'cover', 'auto', or specific dimensions */
+        background-size: cover; /* This will ensure that the image covers the entire area */
         background-repeat: no-repeat;
         background-position: center;
         width: 100%;
         height: 100%;
+        position: absolute; /* This positions the image absolutely within the music-monitor div */
     }
 
     .music-monitor-iframe {
-    position: absolute; /* Position the iframe absolutely within the music-monitor-image */
-    top: 60%;  /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset the iframe by half its width and height */
-    width: 20px; /* Adjust width as needed */
-    height: 10px; /* Adjust height as needed */
-    /* Other styles */
+        position: absolute; /* Position the iframe absolutely within the music-monitor-image */
+        top: 66%;  /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset the iframe by half its width and height */
+        width: 20px;
+        height: 10px; /* Adjust height as needed */
+        border-radius: 5px;
+    
     }
 
     
-    @keyframes flowColors {0.0% { background-color: #FFFF00; }33.333333333333336% { background-color: #0000FF; }66.66666666666667% { background-color: #E6E6FA; }100% { background-color: #FFFF00; }}
+    @keyframes flowColors {0.0% { background-color: #0000FF; }33.333333333333336% { background-color: #E6E6FA; }66.66666666666667% { background-color: #008000; }100% { background-color: #0000FF; }}
     </style>
     </head>
     <body>
@@ -208,12 +210,10 @@
     <div class="side-container">
         <div class="logo"></div>
         <div class="contents">
-            <h1>I'm sorry to hear that you're feeling sad. When it comes to colors that can complement or help soothe this emotion, soft and warm tones are often recommended. Some options you could consider are pale yellow, light blue, or lavender. You might also find comfort in combining these colors and creating a gentle gradient or pastel palette. 
+            <h1>To complement or soothe a feeling of happiness, I would suggest light and calming colors such as pastel shades of blue, green, or lavender.
 
-As for music, here's a YouTube link to a playlist called "Sad & Soothing Songs" that could potentially help to uplift your mood: 
-https://www.youtube.com/playlist?list=PLj_Goi54wf0eq-36YkZqnAPmrIPHR-prq
-
-Remember, everyone's preferences differ, so feel free to explore different colors and genres of music until you find what resonates with you the most.</h1>
+As for music, here is a link to a soothing and uplifting song called "Weightless" by Marconi Union on YouTube: 
+https://www.youtube.com/watch?v=UfcAVejslrU</h1>
         </div>
     </div>
 
@@ -233,7 +233,7 @@ Remember, everyone's preferences differ, so feel free to explore different color
                     <div class="light-strip-45_below"></div>
                     <div class="music-monitor">
                         <div class="music-monitor-image">
-                                <iframe class="music-monitor-iframe" src="https://www.youtube.com/embed/UfcAVejslrU?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe class="music-monitor-iframe" src="https://www.youtube.com/embed/BP5Jm5HAbiQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                         
                     </div>
@@ -246,7 +246,7 @@ Remember, everyone's preferences differ, so feel free to explore different color
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var emotion = 'sad';
+            var emotion = 'happy';
             var musicMonitorImage = document.querySelector('.music-monitor-image');
             if (musicMonitorImage) {
                 musicMonitorImage.style.backgroundImage = 'url(images/monitor_' + emotion + '.jpg)';

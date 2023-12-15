@@ -172,34 +172,36 @@ def create_html_with_colors(colors,contents,music,emotion):
         left: 50.3%;
         background-color: #ffffff;
         transform: translate(-50%, -50%);
-        width: 145px;
-        height: 90px;
+        width: 145px;  /* Or the width of the screen in the car image */
+        height: 90px;  /* Or the height of the screen in the car image */
         box-shadow: 0px 0px 10px #888888;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #333333;
         font-size: 20px;
-        overflow: hidden; /* Hide anything that goes beyond the bounds of the container */
+        overflow: hidden; /* This will hide the overflow from the iframe */
     }
 
     .music-monitor-image {
         background-image: url('images/monitor_sad.jpg');
-        background-size: contain; /* Adjust as needed to 'cover', 'auto', or specific dimensions */
+        background-size: cover; /* This will ensure that the image covers the entire area */
         background-repeat: no-repeat;
         background-position: center;
         width: 100%;
         height: 100%;
+        position: absolute; /* This positions the image absolutely within the music-monitor div */
     }
 
     .music-monitor-iframe {
-    position: absolute; /* Position the iframe absolutely within the music-monitor-image */
-    top: 60%;  /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset the iframe by half its width and height */
-    width: 20px; /* Adjust width as needed */
-    height: 10px; /* Adjust height as needed */
-    /* Other styles */
+        position: absolute; /* Position the iframe absolutely within the music-monitor-image */
+        top: 66%;  /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset the iframe by half its width and height */
+        width: 20px;
+        height: 10px; /* Adjust height as needed */
+        border-radius: 5px;
+    
     }
 
     
