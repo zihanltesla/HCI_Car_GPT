@@ -125,6 +125,29 @@ def create_html_with_colors(colors,contents,emotion):
         animation: flowColors 3s infinite linear;
         transform: rotate(171deg); /* Rotate 135 degrees from horizontal */
         }
+        
+    .light-strip_side_below {
+        position: absolute;
+        top: 73%;
+        left: 56%;
+        width: 13%;
+        height: 10px;
+        background-color: red;
+        animation: flowColors 3s infinite linear;
+    }
+
+    .light-strip-45_below {
+        position: absolute;
+        background-color: red; /* Initial color similar to the strip */
+        transition: background-color 0.5s ease; /* Smooth transition for hover effect */
+        /* Position and size of the strip to match the image */
+        top: 79%; /* Example position */
+        left: 66%; /* Example position */
+        width: 7%; /* Example width */
+        height: 10px; /* Example height */
+        transform: rotate(70deg); /* Rotate 45 degrees from horizontal */
+        animation: flowColors 3s infinite linear;
+    }
 
     .music-monitor {
         background-image: url('images/monitor_sad.jpg');
@@ -181,6 +204,8 @@ def create_html_with_colors(colors,contents,emotion):
                     <div class="light-strip_driver"></div>
                     <div class="light-strip-45"></div>
                     <div class="light-strip-135"></div>
+                    <div class="light-strip_side_below"></div>
+                    <div class="light-strip-45_below"></div>
                     <div class="music-monitor">
                         <div class="music-image"></div> 
                         <iframe width="45" height="10" src="{emotion}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -200,5 +225,12 @@ def save_html_file(content, filename='colors.html'):
     with open(filename, 'w') as file:
         file.write(content)
     print(f"HTML file saved as {filename}")
+
+if __name__ == '__main__':
+   colors = ["red", "blue", "green"]
+   contents = "You are feeling sad"
+   emotion = "https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC"
+   html = create_html_with_colors(colors,contents,emotion)
+   save_html_file(html)
 
 
