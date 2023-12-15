@@ -82,10 +82,11 @@
         position: absolute;
         top: 57%;
         left: 59%;
-        width: 21%;
+        width: 21.5%;
         height: 10px;
         background-color: red;
         animation: flowColors 3s infinite linear;
+        border-radius: 5px;
     }
 
     .light-strip_driver {
@@ -96,6 +97,17 @@
         height: 10px;
         background-color: red;
         animation: flowColors 3s infinite linear;
+        }
+
+    .light-strip_driver_below {
+        position: absolute;
+        top: 68%;
+        left: 36.5%;
+        width: 7.6%;
+        height: 10px;
+        background-color: red;
+        animation: flowColors 3s infinite linear;
+        border-radius: 5px;
         }
 
     .light-strip-45 {
@@ -109,6 +121,7 @@
         height: 10px; /* Example height */
         transform: rotate(10deg); /* Rotate 45 degrees from horizontal */
         animation: flowColors 3s infinite linear;
+        border-radius: 5px;
         }
 
     .light-strip-135 {
@@ -118,17 +131,43 @@
         /* Position and size of the strip to match the image */
         top: 60%; /* Example position */
         left: 10%; /* Example position */
-        width: 10%; /* Example width */
+        width: 9.5%; /* Example width */
         height: 10px; /* Example height */
         animation: flowColors 3s infinite linear;
         transform: rotate(171deg); /* Rotate 135 degrees from horizontal */
+        border-radius: 5px;
         }
+        
+    .light-strip_side_below {
+        position: absolute;
+        top: 73%;
+        left: 56.5%;
+        width: 12.5%;
+        height: 10px;
+        background-color: red;
+        animation: flowColors 3s infinite linear;
+        border-radius: 5px;
+    }
+
+    .light-strip-45_below {
+        position: absolute;
+        background-color: red; /* Initial color similar to the strip */
+        transition: background-color 0.5s ease; /* Smooth transition for hover effect */
+        /* Position and size of the strip to match the image */
+        top: 79%; /* Example position */
+        left: 66.5%; /* Example position */
+        width: 7.5%; /* Example width */
+        height: 10px; /* Example height */
+        transform: rotate(70deg); /* Rotate 45 degrees from horizontal */
+        animation: flowColors 3s infinite linear;
+        border-radius: 5px;
+    }
 
     .music-monitor {
-        background-image: url('images/monitor_sad.jpg');
         position: absolute;
         top: 54.5%;
         left: 50.3%;
+        background-color: #ffffff;
         transform: translate(-50%, -50%);
         width: 145px;
         height: 90px;
@@ -138,11 +177,30 @@
         align-items: center;
         color: #333333;
         font-size: 20px;
+        overflow: hidden; /* Hide anything that goes beyond the bounds of the container */
     }
-    
+
+    .music-monitor-image {
+        background-image: url('images/monitor_sad.jpg');
+        background-size: contain; /* Adjust as needed to 'cover', 'auto', or specific dimensions */
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .music-monitor-iframe {
+    position: absolute; /* Position the iframe absolutely within the music-monitor-image */
+    top: 60%;  /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset the iframe by half its width and height */
+    width: 20px; /* Adjust width as needed */
+    height: 10px; /* Adjust height as needed */
+    /* Other styles */
+    }
 
     
-    @keyframes flowColors {0.0% { background-color: #FF0000; }100% { background-color: #FF0000; }}
+    @keyframes flowColors {0.0% { background-color: #FFFF00; }33.333333333333336% { background-color: #0000FF; }66.66666666666667% { background-color: #E6E6FA; }100% { background-color: #FFFF00; }}
     </style>
     </head>
     <body>
@@ -150,7 +208,12 @@
     <div class="side-container">
         <div class="logo"></div>
         <div class="contents">
-            <h1>aaaaa</h1>
+            <h1>I'm sorry to hear that you're feeling sad. When it comes to colors that can complement or help soothe this emotion, soft and warm tones are often recommended. Some options you could consider are pale yellow, light blue, or lavender. You might also find comfort in combining these colors and creating a gentle gradient or pastel palette. 
+
+As for music, here's a YouTube link to a playlist called "Sad & Soothing Songs" that could potentially help to uplift your mood: 
+https://www.youtube.com/playlist?list=PLj_Goi54wf0eq-36YkZqnAPmrIPHR-prq
+
+Remember, everyone's preferences differ, so feel free to explore different colors and genres of music until you find what resonates with you the most.</h1>
         </div>
     </div>
 
@@ -163,16 +226,33 @@
                 <!-- Single light-strip element for the flowing color effect -->
                     <div class="light-strip_side"></div>
                     <div class="light-strip_driver"></div>
+                    <div class="light-strip_driver_below"></div>
                     <div class="light-strip-45"></div>
                     <div class="light-strip-135"></div>
+                    <div class="light-strip_side_below"></div>
+                    <div class="light-strip-45_below"></div>
                     <div class="music-monitor">
-                        <div class="music-image"></div> 
-                        <iframe width="45" height="10" src="https://www.youtube.com/embed/BP5Jm5HAbiQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="music-monitor-image">
+                                <iframe class="music-monitor-iframe" src="https://www.youtube.com/embed/UfcAVejslrU?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                        
                     </div>
             </div>
         </div>
     </div>
+
     
     </body>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var emotion = 'sad';
+            var musicMonitorImage = document.querySelector('.music-monitor-image');
+            if (musicMonitorImage) {
+                musicMonitorImage.style.backgroundImage = 'url(images/monitor_' + emotion + '.jpg)';
+            }
+        });
+    </script>
+    
     </html>
     

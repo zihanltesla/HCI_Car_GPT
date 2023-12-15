@@ -123,7 +123,7 @@ if response.get('choices') and len(response['choices']) > 0:
         colors_str = ", ".join(colors)
         print(f"The appropriate ambient light colors for '{emotion}' are: {colors_str}")
         colors_hex = map_colors_to_hex(colors, color_name_to_hex)
-        html_content = create_html_with_colors(colors_hex, response,youtube_links_dict[emotion])
+        html_content = create_html_with_colors(colors_hex, response,youtube_links_dict[emotion],emotion)
         save_html_file(html_content)
 
     print("GPT Music Response:", youtube_links_dict[emotion])
