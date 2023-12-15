@@ -1,4 +1,4 @@
-def create_html_with_colors(colors,contents,music,emotion):
+def create_html_with_colors(colors,contents,music,emotion,data_dict):
     # Start building the HTML content with the head, including styles and keyframes for animations
     
     html_content = """
@@ -193,15 +193,68 @@ def create_html_with_colors(colors,contents,music,emotion):
         position: absolute; /* This positions the image absolutely within the music-monitor div */
     }
 
-    .logo-image {
-        background-image: url('images/car_logo.jpg');
-        background-size: contain; /* This will ensure the entire image fits within the area */
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 8%;
+    .camera_sensor {
+        background-color: #ffffff;
+        width: 13%;
         height: 8%;
-        top: 52%;
+        top: 10%;
+        left: 43%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .speed_sensor {
+        background-color: #ffffff;
+        width: 11%;
+        height: 8%;
+        top:32%;
+        left: 35%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .acceleration_sensor {
+        background-color: #ffffff;
+        width: 15%;
+        height: 8%;
+        top:32%;
+        left: 55%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .heartrate_sensor {
+        background-color: #ffffff;
+        width: 13%;
+        height: 8%;
+        top: 85%;
         left: 25%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .voice_sensor {
+        background-color: #ffffff;
+        width: 13%;
+        height: 8%;
+        top: 5%;
+        left: 5%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .skin_temperature_sensor {
+        background-color: #ffffff;
+        width: 20%;
+        height: 8%;
+        top: 85%;
+        left: 2%;
+        align-items: center;
         position: absolute;
         border-radius: 5px;
     }
@@ -264,6 +317,13 @@ def create_html_with_colors(colors,contents,music,emotion):
                         </div>
                         
                     </div>
+
+                    <div class="camera_sensor">Camera_data: {data_dict["camera_data"]}</div>
+                    <div class="speed_sensor">Speed_data: {data_dict["speed_data"]}</div>
+                    <div class="acceleration_sensor">Acceleration_data: {data_dict["acceleration_data"]}</div>
+                    <div class="heartrate_sensor">Heartrate_data: {data_dict["heartrate_data"]}</div>
+                    <div class="skin_temperature_sensor">Skin_temperature_data: {data_dict["skin_temperature_data"]}</div>
+                    <div class="voice_sensor">Voice_data: {data_dict["voice_data"]}</div>
             </div>
         </div>
     </div>

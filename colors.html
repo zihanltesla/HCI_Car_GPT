@@ -190,15 +190,68 @@
         position: absolute; /* This positions the image absolutely within the music-monitor div */
     }
 
-    .logo-image {
-        background-image: url('images/car_logo.jpg');
-        background-size: contain; /* This will ensure the entire image fits within the area */
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 8%;
+    .camera_sensor {
+        background-color: #ffffff;
+        width: 13%;
         height: 8%;
-        top: 52%;
+        top: 10%;
+        left: 43%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .speed_sensor {
+        background-color: #ffffff;
+        width: 11%;
+        height: 8%;
+        top:32%;
+        left: 35%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .acceleration_sensor {
+        background-color: #ffffff;
+        width: 15%;
+        height: 8%;
+        top:32%;
+        left: 55%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .heartrate_sensor {
+        background-color: #ffffff;
+        width: 13%;
+        height: 8%;
+        top: 85%;
         left: 25%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .voice_sensor {
+        background-color: #ffffff;
+        width: 13%;
+        height: 8%;
+        top: 5%;
+        left: 5%;
+        align-items: center;
+        position: absolute;
+        border-radius: 5px;
+    }
+
+    .skin_temperature_sensor {
+        background-color: #ffffff;
+        width: 20%;
+        height: 8%;
+        top: 85%;
+        left: 2%;
+        align-items: center;
         position: absolute;
         border-radius: 5px;
     }
@@ -215,7 +268,7 @@
     }
 
     
-    @keyframes flowColors {0.0% { background-color: #0000FF; }50.0% { background-color: #FFFF00; }100% { background-color: #0000FF; }}
+    @keyframes flowColors {0.0% { background-color: #F5FFFA; }25.0% { background-color: #FFFF00; }50.0% { background-color: #0000FF; }75.0% { background-color: #008000; }100% { background-color: #F5FFFA; }}
     </style>
     </head>
     <body>
@@ -223,9 +276,20 @@
     <div class="side-container">
         <div class="logo"></div>
         <div class="contents">
-            <h1>If you're feeling happy and would like to complement or enhance this emotion, I suggest the color combination of light blue and soft yellow. Light blue can create a calming and peaceful atmosphere, while soft yellow adds a touch of warmth and cheerfulness.
+            <h1>For complementing and soothing happy emotions, light colors such as pastel shades are often recommended. These colors tend to have a calming effect while still maintaining a cheerful ambiance. Some light color suggestions could be:
 
-As for music, I recommend listening to "Happy" by Pharrell Williams. It's a catchy and upbeat song that can amplify your current positive mood. You can listen to it on YouTube through this link: [Pharrell Williams - Happy](https://www.youtube.com/watch?v=y6Sxv-sUYtM)</h1>
+1. Pale Yellow: A soft and mellow shade that symbolizes happiness and positivity.
+2. Sky Blue: A gentle and serene color that evokes feelings of tranquility and calmness.
+3. Mint Green: A refreshing and soothing color that promotes a sense of rejuvenation and well-being.
+
+Combining these colors can create a harmonious and peaceful environment. For example, a combination of pale yellow and sky blue can create a cheerful and serene atmosphere.
+
+Now, regarding music on YouTube that complements happy emotions, here is a link to a highly popular song that is known for its uplifting and joyful vibes:
+
+Title: "Happy" by Pharrell Williams
+Link: https://www.youtube.com/watch?v=y6Sxv-sUYtM
+
+This song is guaranteed to lift your spirits and enhance your happy mood. Enjoy!</h1>
         </div>
     </div>
 
@@ -249,6 +313,13 @@ As for music, I recommend listening to "Happy" by Pharrell Williams. It's a catc
                         </div>
                         
                     </div>
+
+                    <div class="camera_sensor">Camera_data: face_smile</div>
+                    <div class="speed_sensor">Speed_data: 120</div>
+                    <div class="acceleration_sensor">Acceleration_data: 0</div>
+                    <div class="heartrate_sensor">Heartrate_data: 100</div>
+                    <div class="skin_temperature_sensor">Skin_temperature_data: 34</div>
+                    <div class="voice_sensor">Voice_data: 70</div>
             </div>
         </div>
     </div>

@@ -98,11 +98,52 @@ color_name_to_hex = {
     "plum": "#DDA0DD",
     # Add any other colors you need to translate
 }
-# 示例：发送一个请求
-emotion = input("Enter your emotion: ")
+
+
+
+print("-----------System Start to Collect Sensors Data----------------")
+camera_data= input("1. Enter the camera data:") or "face_smile"
+print("👌")
+#120
+speed_data= input("2. Enter the Speed data:") or "120"
+print("👌")
+#10
+acceleration_data= input("3. Enter the acceleration data:") or "0"
+print("👌")
+#150
+heartrate_data = input("4. Enter the heart rate data:") or "100"
+print("👌")
+#37
+skin_temperature_data = input("5. Enter the skin temperature data:") or "34"
+print("👌")
+#100
+voice_data = input("6. Enter the voice volume data:") or "70"
+
+
+data_dict={
+  'camera_data': camera_data,
+  'speed_data': speed_data,
+  'acceleration_data': acceleration_data,
+  'heartrate_data': heartrate_data,
+  'skin_temperature_data': skin_temperature_data,
+  'voice_data': voice_data
+}
+
+print("-----------Collection Finished----------------")
+print("")
+print(data_dict)
+print("")
+print("-----------GPT Start to think----------------")
+if(camera_data!="face_smile"):
+    emotion="angry"
+else:
+    emotion="happy"
+
+print("✅ GPT get the emotion:", emotion)
+print("")
+print("-----------System Start to visulize the effects----------------")
 response = get_light_color_and_music(emotion)
 
-# 提取并打印氛围灯颜色and music
 
 if response.get('choices') and len(response['choices']) > 0:
 
@@ -112,7 +153,7 @@ if response.get('choices') and len(response['choices']) > 0:
     youtube_links_dict = {
         "happy": "https://www.youtube.com/embed/BP5Jm5HAbiQ",
         "sad": "https://www.youtube.com/embed/UfcAVejslrU",  # Replace with the actual video ID for 'sad'
-        "excited": "https://www.youtube.com/embed/UfcAVejslrU"  # Assuming this is the link for 'excited'
+        "angry": "https://www.youtube.com/embed/UfcAVejslrU"  # Assuming this is the link for 'excited'
     }
 
     print("GPT Color Response:", response)
@@ -123,7 +164,7 @@ if response.get('choices') and len(response['choices']) > 0:
         colors_str = ", ".join(colors)
         print(f"The appropriate ambient light colors for '{emotion}' are: {colors_str}")
         colors_hex = map_colors_to_hex(colors, color_name_to_hex)
-        html_content = create_html_with_colors(colors_hex, response,youtube_links_dict[emotion],emotion)
+        html_content = create_html_with_colors(colors_hex, response,youtube_links_dict[emotion],emotion,data_dict)
         save_html_file(html_content)
 
     print("GPT Music Response:", youtube_links_dict[emotion])
