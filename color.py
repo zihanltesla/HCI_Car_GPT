@@ -194,18 +194,22 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
     }
 
     .camera_sensor {
-        background-color: #ffffff;
-        width: 13%;
+        background-color: #000000;
+        width: 20%;
         height: 8%;
         top: 10%;
-        left: 43%;
+        left: 40%;
         align-items: center;
         position: absolute;
         border-radius: 5px;
+        opacity: 0.7;
+        justify-content: center; /* Center text horizontally */
+        color: #ffffff;
+        text-align: center; /* Ensure that the text inside is centered if it wraps */
     }
 
     .speed_sensor {
-        background-color: #ffffff;
+
         width: 11%;
         height: 8%;
         top:32%;
@@ -213,10 +217,14 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
         align-items: center;
         position: absolute;
         border-radius: 5px;
+        opacity: 0.7;
+        justify-content: center; /* Center text horizontally */
+        color: #ffffff;
+        text-align: center; /* Ensure that the text inside is centered if it wraps */
+        background-color: #000000;
     }
 
     .acceleration_sensor {
-        background-color: #ffffff;
         width: 15%;
         height: 8%;
         top:32%;
@@ -224,21 +232,29 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
         align-items: center;
         position: absolute;
         border-radius: 5px;
+        opacity: 0.7;
+        justify-content: center; /* Center text horizontally */
+        color: #ffffff;
+        text-align: center; /* Ensure that the text inside is centered if it wraps */
+        background-color: #000000;
     }
 
     .heartrate_sensor {
-        background-color: #ffffff;
         width: 13%;
         height: 8%;
-        top: 85%;
-        left: 25%;
+        top: 60%;
+        left: 22%;
         align-items: center;
         position: absolute;
         border-radius: 5px;
+        opacity: 0.7;
+        justify-content: center; /* Center text horizontally */
+        color: #ffffff;
+        text-align: center; /* Ensure that the text inside is centered if it wraps */
+        background-color: #000000;
     }
 
     .voice_sensor {
-        background-color: #ffffff;
         width: 13%;
         height: 8%;
         top: 5%;
@@ -246,10 +262,14 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
         align-items: center;
         position: absolute;
         border-radius: 5px;
+        opacity: 0.7;
+        justify-content: center; /* Center text horizontally */
+        color: #ffffff;
+        text-align: center; /* Ensure that the text inside is centered if it wraps */
+        background-color: #000000;
     }
 
     .skin_temperature_sensor {
-        background-color: #ffffff;
         width: 20%;
         height: 8%;
         top: 85%;
@@ -257,6 +277,11 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
         align-items: center;
         position: absolute;
         border-radius: 5px;
+        opacity: 0.7;
+        justify-content: center; /* Center text horizontally */
+        color: #ffffff;
+        text-align: center; /* Ensure that the text inside is centered if it wraps */
+        background-color: #000000;
     }
 
     .music-monitor-iframe {
@@ -319,7 +344,7 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
                     </div>
 
                     <div class="camera_sensor">Camera_data: {data_dict["camera_data"]}</div>
-                    <div class="speed_sensor">Speed_data: {data_dict["speed_data"]}</div>
+                    <div class="speed_sensor">Speed_data: {data_dict["speed_data"]} KM      /h</div>
                     <div class="acceleration_sensor">Acceleration_data: {data_dict["acceleration_data"]}</div>
                     <div class="heartrate_sensor">Heartrate_data: {data_dict["heartrate_data"]}</div>
                     <div class="skin_temperature_sensor">Skin_temperature_data: {data_dict["skin_temperature_data"]}</div>
