@@ -24,7 +24,8 @@
         border-radius: 25px;
         align-items: center;
         justify-content: space-around;
-        width: 500px; /* Adjust the width as needed */
+        width: 600px; /* Adjust the width as needed */
+        height: 600px;
         padding: 10px;
         box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     }
@@ -58,6 +59,29 @@
         font-size: 10px;
         font-weight: light;
     }
+
+    .contents_side {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 7px;
+        font-weight: light;
+                border-radius: 10px;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    }
+
+    .contents_side_output {
+        width: 600px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 10px;
+        font-weight: light;
+        border-radius: 10px;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        background-color: #000080; /* A light grey, you can adjust the color as needed */
+        color: #CEE4FE; /* A dark grey color for the text, for better contrast */
+        padding: 10px; /* Add padding to give space inside the container */
+    }
+
     .image_container {
         border-radius: 25px;
         width: 100%;
@@ -300,10 +324,20 @@
 
     <div class="side-container">
         <div class="logo"></div>
-        <div class="contents">
-            <h1>aaaaa</h1>
+        <div class="contents_side">
+            <h1>{'camera_data': 'smile', 'speed_data': 'smile', 'acceleration_data': 'smile', 'heartrate_data': 'smile', 'skin_temperature_data': 'smile', 'voice_data': 'smile'}</h1>
+        </div>
+
+        <div class="contents_side">
+            <h1>If you're feeling angry and looking for a color to help soothe your emotions, try focusing on cool and calming colors. Light blue, such as baby blue or sky blue, is often associated with feelings of peace and tranquility. Light green, like mint or seafoam green, can also have a calming effect. Alternatively, combining light blue and light green in a color combination can create a refreshing and serene atmosphere.As for music, instntal tracks or genres that encourage relaxation and mindfulness can help in calming your anger. One example is by Marconi Union, which is a specially designed track known for its soothing qualities. Here's a link to the song on YouTube: https://www.youtube.com/watch?v=UfcAVejslrURemember that everyone's preferences and reactions to colors and music may vary, so these suggestions are not guaranteed to work for everyone. It's important to explore and find what resonates with you personally.The appropriate ambient light colors for 'angry' are: green, blue, mint</h1>
+        </div>
+        <div class="contents_side_output">
+            <h1>Light colors: ['#FF1001']</h1>
+            <h1>Emotion detected: angry</h1>
+            <h1>Temperature: 27☠️</h1>
         </div>
     </div>
+
 
     <div class="container">
         <div class="header">

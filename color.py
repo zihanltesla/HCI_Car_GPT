@@ -27,7 +27,8 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
         border-radius: 25px;
         align-items: center;
         justify-content: space-around;
-        width: 500px; /* Adjust the width as needed */
+        width: 600px; /* Adjust the width as needed */
+        height: 600px;
         padding: 10px;
         box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     }
@@ -61,6 +62,29 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
         font-size: 10px;
         font-weight: light;
     }
+
+    .contents_side {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 7px;
+        font-weight: light;
+                border-radius: 10px;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    }
+
+    .contents_side_output {
+        width: 600px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 10px;
+        font-weight: light;
+        border-radius: 10px;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        background-color: #000080; /* A light grey, you can adjust the color as needed */
+        color: #CEE4FE; /* A dark grey color for the text, for better contrast */
+        padding: 10px; /* Add padding to give space inside the container */
+    }
+
     .image_container {
         border-radius: 25px;
         width: 100%;
@@ -317,10 +341,20 @@ def create_html_with_colors(colors,contents,music,emotion,data_dict):
 
     <div class="side-container">
         <div class="logo"></div>
-        <div class="contents">
+        <div class="contents_side">
+            <h1>{data_dict}</h1>
+        </div>
+
+        <div class="contents_side">
             <h1>{contents}</h1>
         </div>
+        <div class="contents_side_output">
+            <h1>Light colors: {colors}</h1>
+            <h1>Emotion detected: {emotion}</h1>
+            <h1>Temperature: 27☠️</h1>
+        </div>
     </div>
+
 
     <div class="container">
         <div class="header">
